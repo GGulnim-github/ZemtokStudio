@@ -16,8 +16,8 @@
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
       }
-      
-       createUnityInstance(document.querySelector("#unity-canvas"), {
+      var myGameInstance = null;
+      createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/Builds.data.unityweb",
         frameworkUrl: "Build/Builds.framework.js.unityweb",
         codeUrl: "Build/Builds.wasm.unityweb",
@@ -27,11 +27,10 @@
         productVersion: "0.1.0",
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      }).then(unityInstance);
-      var myGameInstance = unityInstance;
+      }).then(myGameInstance);
     </script>
     </div>
-    <div style="border:solid 1px rgb(200, 255, 0); width:200px; height:30px; margin:auto; text-align:center" onclick="myGameInstance.SendMessage('ZemtokStudioManager','ChangeClothes',102000100)">Toki</div>
+    <div style="border:solid 1px rgb(255, 0, 106); width:200px; height:30px; margin:auto; text-align:center" onclick="myGameInstance.SendMessage('ZemtokStudioManager','ChangeClothes',102000100)">Toki</div>
     <div style="width:200px; height:30px; margin:auto; text-align:center" onclick="myGameInstance.SendMessage('ZemtokStudioManager','ChangeClothes',102000200)">Zemi</div>
     </div>
   </body>
