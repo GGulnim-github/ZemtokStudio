@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | ZemtokStudio</title>
-    <!--<link rel="shortcut icon" href="TemplateData/favicon.ico">-->
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
@@ -22,6 +22,10 @@
         <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">ZemtokStudio</div>
       </div>
+      <div id="gender">
+        <div id="toky"></div>
+        <div id="zemi"></div>
+      </div>
     </div>
     <script>
       var container = document.querySelector("#unity-container");
@@ -30,6 +34,8 @@
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var warningBanner = document.querySelector("#unity-warning");
+      var toky = document.querySelector("#toky");
+      var zemi = document.querySelector("#zemi");
 
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
@@ -110,6 +116,12 @@
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
+          };
+          toky.onclick = () => {
+            unityInstance.SendMessage('ZemtokStudioManager','ChangeClothesStr', '102000100');
+          };
+          zemi.onclick = () => {
+            unityInstance.SendMessage('ZemtokStudioManager','ChangeClothesStr', '102000200');
           };
         }).catch((message) => {
           alert(message);
