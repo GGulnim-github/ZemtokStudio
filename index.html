@@ -123,6 +123,9 @@
           zemi.onclick = () => {
             unityInstance.SendMessage('ZemtokStudioManager','ChangeClothesStr', '102000200');
           };
+          window.addEventListener('message', event => {
+            unityInstance.SendMessage('ZemtokStudioManager','ChangeClothesStr', event.data);
+          });
         }).catch((message) => {
           alert(message);
         });
