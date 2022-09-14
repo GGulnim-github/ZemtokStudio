@@ -17,7 +17,7 @@
         document.getElementsByTagName('head')[0].appendChild(meta);
       }
 
-      createUnityInstance(document.querySelector("#unity-canvas"), {
+      var unityInstance = createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/Builds.data.unityweb",
         frameworkUrl: "Build/Builds.framework.js.unityweb",
         codeUrl: "Build/Builds.wasm.unityweb",
@@ -29,5 +29,8 @@
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
     </script>
+    </div>
+    <div style="border:solid 1px black; width:200px; height:30p; margin:auto; text-align:center" onclick=""></div>
+    </div>
   </body>
 </html>
