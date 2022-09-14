@@ -104,7 +104,10 @@
           loadingBar.style.display = "none";
 
           window.addEventListener('message', event => {
-            unityInstance.SendMessage('ZemtokStudioManager','ChangeClothesStr', event.data);
+            if(event.data[0] == 'index')
+            {
+              unityInstance.SendMessage('ZemtokStudioManager','ChangeClothesStr', event.data[1]);
+            }
           });
         }).catch((message) => {
           alert(message);
